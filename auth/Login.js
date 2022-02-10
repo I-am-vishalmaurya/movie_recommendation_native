@@ -7,55 +7,21 @@ import {
 } from "react-native";
 import React from "react";
 import { KeyboardAvoidingView, TextInput } from "react-native";
-import { api_URL, auth_URL } from "../config/env";
-import axios from "axios";
+import { connect, useDispatch } from "react-redux";
+import { login } from "../redux/actions";
 
 const Login = ({ navigation }) => {
-  const [email, setEmail] = React.useState("");
+  const [userName, setUserName] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [error, setError] = React.useState({ status: false, message: "" });
-  const handleLogin = () => {
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        Accept: "application/json",
-      },
-    };
-    const body = JSON.stringify({
-      username: email,
-      password: password,
-    });
-    const res = axios.post(`${auth_URL.AUTH_URI}/token/login/`, body, config);
-    res
-      .then((response) => {
-        if (response.status === 200) {
-          console.log(response.data.auth_token);
-          setError({
-            status: false,
-            message: "",
-          });
-        }
-      })
-      .catch((err) => {
-        if (err.response) {
-          setError({
-            status: true,
-            message: err.response.data.non_field_errors[0],
-          });
-        } else {
-          setError({
-            status: true,
-            message: "Something went wrong",
-          });
-        }
-      });
+
+  const dispatch = useDispatch();
+  const onSubmit = () => {
+    dispatch(login(userName, password));
   };
 
   const handleRegister = () => {
     navigation.navigate("Register");
   };
-  console.log("Just checking");
   return (
     <>
       <KeyboardAvoidingView>
@@ -65,17 +31,14 @@ const Login = ({ navigation }) => {
             <Text style={styles.pageSubtitle}>Register</Text>
           </TouchableOpacity>
         </SafeAreaView>
-
-        {error.status && <Text style={styles.error}>{error.message}</Text>}
         <View style={styles.InputContainer}>
           <TextInput
             style={styles.input}
             placeholder="Username"
             placeholderTextColor={"white"}
-            keyboardType="email-address"
-            value={email}
+            value={userName}
             autoCapitalize="none"
-            onChangeText={(text) => setEmail(text)}
+            onChangeText={(text) => setUserName(text)}
           />
         </View>
         <View style={styles.InputContainer}>
@@ -93,7 +56,7 @@ const Login = ({ navigation }) => {
       <View>
         <Text style={styles.forgot}>Forgot Password?</Text>
       </View>
-      <TouchableOpacity style={styles.buttonContainer} onPress={handleLogin}>
+      <TouchableOpacity style={styles.buttonContainer} onPress={onSubmit}>
         <Text style={styles.button}>Log In</Text>
       </TouchableOpacity>
     </>
