@@ -249,6 +249,7 @@ const HomeScreen = () => {
                   imageUri={movie.poster_path}
                   key={movie.id}
                   title={movie.original_title}
+                  
                 />
               ))}
             </ScrollView>

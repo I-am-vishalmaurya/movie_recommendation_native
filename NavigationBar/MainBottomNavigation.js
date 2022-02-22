@@ -1,12 +1,12 @@
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator, createNativeStackNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome5 } from "@expo/vector-icons";
 import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SearchScreen from "../screens/SearchScreen";
+import { HomeScreenNavigator } from "../CustomNavigation";
 const BottomTab = createBottomTabNavigator();
-
 export default function BottomNavigation() {
   const MyTheme = {
     ...DefaultTheme,
@@ -49,7 +49,7 @@ export default function BottomNavigation() {
       >
         <BottomTab.Screen
           name="Home"
-          component={HomeScreen}
+          component={HomeScreenNavigator}
           options={{
             tabBarIcon: ({ focused }) => (
               <View style={styles.bottomNavMenu}>
@@ -102,9 +102,19 @@ export default function BottomNavigation() {
           }}
         ></BottomTab.Screen>
       </BottomTab.Navigator>
+      {/* <StackNavigator.Navigator>
+        <StackNavigator.Screen
+          name="MovieDetail"
+          component={MovieDetailScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </StackNavigator.Navigator> */}
     </NavigationContainer>
   );
 }
+        
 
 const styles = StyleSheet.create({
   container: {

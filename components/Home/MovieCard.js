@@ -1,21 +1,21 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import {
   View,
   Text,
-  StyleSheet,
   Image,
-  TouchableOpacity,
-  ScrollView,
 } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-const MovieCard = (props) => {
+const MovieCard = ({navigation}, props) => {
   return (
-    <View
+    <TouchableOpacity
       style={{
         height: 200,
         width: 100,
         marginLeft: 20,
+      }}
+      onPress={() => {
+        
       }}
     >
       <View
@@ -51,7 +51,7 @@ const MovieCard = (props) => {
           {props.title}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
