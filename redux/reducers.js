@@ -21,7 +21,7 @@ import {
 
 const initialState = {
   token: null,
-  isLoggedIn: false,
+  isLoggedIn: null,
   loading: true,
   user: null,
   error: null,

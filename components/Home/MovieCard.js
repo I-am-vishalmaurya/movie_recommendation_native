@@ -4,9 +4,12 @@ import {
   Text,
   Image,
 } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const MovieCard = ({navigation}, props) => {
+const MovieCard = (props) => {
+
+  const navigation = useNavigation();
   return (
     <TouchableOpacity
       style={{
@@ -15,6 +18,9 @@ const MovieCard = ({navigation}, props) => {
         marginLeft: 20,
       }}
       onPress={() => {
+        navigation.navigate("MovieDetail", {
+          movieDetails: props,
+          });
         
       }}
     >
@@ -25,7 +31,7 @@ const MovieCard = ({navigation}, props) => {
       >
         <Image
           source={{
-            uri: `http://image.tmdb.org/t/p/original${props.imageUri}`,
+            uri: `http://image.tmdb.org/t/p/original${props.poster_path}`,
           }}
           style={{
             flex: 1,
@@ -48,7 +54,7 @@ const MovieCard = ({navigation}, props) => {
             color: "#adb5bd",
           }}
         >
-          {props.title}
+          {props.original_title}
         </Text>
       </View>
     </TouchableOpacity>

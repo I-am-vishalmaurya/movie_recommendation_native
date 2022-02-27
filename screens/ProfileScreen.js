@@ -10,6 +10,7 @@ const ProfileScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   const onLogout = () => {
     dispatch(logout());
+    navigation.navigate("Home");
   };
 
   //get width of device
@@ -30,48 +31,56 @@ const ProfileScreen = ({ navigation }) => {
           <Text style={{ fontWeight: "800" }}>
             <Text
               style={{
+                color: "white",
+              }}
+            >
+              Welcome{" "}
+            </Text>{" "}
+            <Text
+              style={{
                 color: "#52b788",
               }}
             >
-              Watching{" "}
+              pythonicnerd{" "}
             </Text>{" "}
           </Text>
+          <View style={{
+            flexDirection: "column",
+            justifyContent: "space-between",
+            marginTop: 20,
+
+          }}>
+            <Text style={{
+              color: "white",
+              fontSize: 20,
+              fontWeight: "600",
+
+            }}>
+              Name: Vishal Maurya
+            </Text>
+            <Text style={{
+              color: "white",
+              fontSize: 20,
+              fontWeight: "600",
+              marginTop: 20,
+
+            }}>
+              Email: vishalmaurya3112@gmail.com
+            </Text>
+
+
+          </View>
           <View>
-            <View
-              style={{
-                flex: 1,
-                width: width / 2,
-                height: width / 2,
-                justifyContent: "space-evenly",
-                alignItems: "flex-start",
-                alignContent: "space-around",
-                flexWrap: "wrap",
-                paddingTop: 20,
-              }}
-            >
-              <Image
-                style={{
-                  width: width / 2,
-                  height: width / 2,
-                  flex: 1,
-                  resizeMode: "contain",
-                }}
-                source={{
-                  uri: "http://image.tmdb.org/t/p/original/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",
-                }}
-              />
-              <Image
-                style={{
-                  flex: 1,
-                  width: width / 2,
-                  height: width / 2,
-                  resizeMode: "contain",
-                }}
-                source={{
-                  uri: "http://image.tmdb.org/t/p/original/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",
-                }}
-              />
-            </View>
+            <TouchableOpacity onPress={onLogout} style={{
+              padding: 20,
+              backgroundColor: "#52b788",
+              borderRadius: 10,
+              marginTop: 20,
+              width: width - 40,
+              alignItems: "center",
+            }}>
+              <Text style={{ color: "white", fontSize: 16 }}>Logout</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>

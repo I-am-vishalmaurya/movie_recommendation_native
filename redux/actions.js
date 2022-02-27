@@ -70,12 +70,14 @@ const setLoadUserStateFail = (payload) => {
 
 export const login = (username, password) => {
   return async (dispatch) => {
+    console.log(auth_URL.AUTH_URI);
     try {
       const res = await axios.post(`${auth_URL.AUTH_URI}/token/login/`, {
         username,
         password,
       });
-      console.log(res.data);
+      // console.log(res.data);
+      
       const token = res.data.auth_token;
       AsyncStorage.setItem("@token", "Token " + token);
       dispatch(setLoginState("Token " + token));

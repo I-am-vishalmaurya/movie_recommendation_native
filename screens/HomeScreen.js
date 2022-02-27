@@ -1,6 +1,15 @@
-import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  Image,
+  Dimensions,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MovieCard from "../components/Home/MovieCard";
+import TopMovies from "../components/Home/TopMovies";
+import WatchingHistory from "../components/Home/WatchingHistory";
 
 const dummyData = [
   {
@@ -202,9 +211,44 @@ const dummyData = [
 ];
 
 const HomeScreen = () => {
+  // screen width
+  const width = Dimensions.get("window").width;
   return (
     <SafeAreaView>
       <ScrollView scrollEventThrottle={16}>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "row",
+          }}
+        >
+          <View
+            style={{
+              height: 400,
+              marginBottom: 20,
+            }}
+          >
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
+              {dummyData.map((movie) => (
+                <Image
+                  key={movie.id}
+                  style={{
+                    width: width,
+                    height: null,
+                  }}
+                  resizeMode="cover"
+                  source={{
+                    uri:
+                      "http://image.tmdb.org/t/p/original/" + movie.poster_path,
+                  }}
+                />
+              ))}
+            </ScrollView>
+          </View>
+        </View>
         <View
           style={{
             flex: 1,
@@ -246,15 +290,25 @@ const HomeScreen = () => {
             >
               {dummyData.map((movie) => (
                 <MovieCard
-                  imageUri={movie.poster_path}
+                  movie_id={movie.id}
+                  poster_path={movie.poster_path}
                   key={movie.id}
-                  title={movie.original_title}
-                  
+                  original_title={movie.original_title}
+                  overview={movie.overview}
+                  genres={movie.genres}
+                  popularity={movie.popularity}
+                  year={movie.year}
+                  status={movie.status}
+                  runtime={movie.runtime}
                 />
               ))}
             </ScrollView>
           </View>
         </View>
+        {/* WEEKLY TOP */}
+        <TopMovies />
+        {/* YOUR WATCHLIST */}
+        <WatchingHistory />
       </ScrollView>
     </SafeAreaView>
   );

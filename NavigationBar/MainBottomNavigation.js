@@ -5,7 +5,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import SearchScreen from "../screens/SearchScreen";
-import { HomeScreenNavigator } from "../CustomNavigation";
+import { HomeScreenNavigator, SearchScreenNavigator } from "../CustomNavigation";
 const BottomTab = createBottomTabNavigator();
 export default function BottomNavigation() {
   const MyTheme = {
@@ -85,7 +85,7 @@ export default function BottomNavigation() {
         ></BottomTab.Screen>
         <BottomTab.Screen
           name="Search"
-          component={SearchScreen}
+          component={SearchScreenNavigator}
           options={{
             tabBarIcon: ({ focused }) => (
               <View style={styles.bottomNavMenu}>
@@ -102,15 +102,6 @@ export default function BottomNavigation() {
           }}
         ></BottomTab.Screen>
       </BottomTab.Navigator>
-      {/* <StackNavigator.Navigator>
-        <StackNavigator.Screen
-          name="MovieDetail"
-          component={MovieDetailScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-      </StackNavigator.Navigator> */}
     </NavigationContainer>
   );
 }
