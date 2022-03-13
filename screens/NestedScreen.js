@@ -7,6 +7,8 @@ import {
   ScrollView,
   ImageBackground,
 } from "react-native";
+import AddToWatchlist from "../components/Home/AddToWatchlist";
+import RateMovie from "../components/Home/RateMovie";
 import RelatedMovies from "../components/Home/RelatedMovies";
 import GlowBorderButtons from "../components/UI/Buttons/GlowBorderButtons";
 
@@ -102,6 +104,20 @@ const MovieDetailStackScreen = ({ route }) => {
               {route.params.movieDetails.overview}
             </Text>
           </View>
+          <View
+            style={{
+              flex: 1,
+              paddingHorizontal: 20,
+              marginTop: 20,
+            }}
+          >
+            <AddToWatchlist title={"Add to Watchlist"} movieId={route.params.movieDetails.movie_id}/>
+          </View>
+
+          <RateMovie
+            original_title={route.params.movieDetails.original_title}
+            movieId={route.params.movieDetails.movie_id}
+          />
           <View
             style={{
               flex: 1,

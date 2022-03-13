@@ -134,7 +134,7 @@ export const logout = () => {
       const config = {
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Token " + token,
+          Authorization: token,
         },
       };
       const res = await axios.post(
@@ -212,6 +212,7 @@ export const loadUserWatchlist = () => {
 };
 
 const setAddToWatchlist = (payload) => {
+  alert("Added to watchlist");
   return {
     type: ADD_TO_WATCHLIST_SUCCESS,
     payload: payload,
@@ -219,6 +220,7 @@ const setAddToWatchlist = (payload) => {
 };
 
 const setAddToWatchlistFail = (payload) => {
+  alert("Movie is already in watchlist");
   return {
     type: ADD_TO_WATCHLIST_FAILED,
     payload: payload,
@@ -228,9 +230,16 @@ const setAddToWatchlistFail = (payload) => {
 export const addToWatchList = (id) => {
   return async (dispatch) => {
     try {
+      const token = await AsyncStorage.getItem("@token");
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      };
       const res = await axios.post(`${api_URL.API_URI}/watchlist/`, {
         movie_id: id,
-      });
+      }, config);
       if (res.status === 201) {
         dispatch(setAddToWatchlist(res.data));
       }
@@ -327,14 +336,24 @@ const setRateMovieFailed = (payload) => {
 export const rateMovie = (id, rating, review) => {
   return async (dispatch) => {
     try {
+      const token = await AsyncStorage.getItem("@token");
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      };
+
       const res = await axios.post(
         `${api_URL.API_URI}/movies/rate_movie/${id}`,
         {
           rating: rating,
           review: review,
-        }
+        },
+        config
       );
       if (res.status === 200) {
+        console.log("Success")
         dispatch(setRateMovieSuccess(res.data));
       }
     } catch (e) {
@@ -343,6 +362,8 @@ export const rateMovie = (id, rating, review) => {
     }
   };
 };
+
+
 // ===================xxxxxxxxxx==============================
 // User and Movies Interaction
 // ===================xxxxxxxxxx==============================

@@ -2,22 +2,49 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { logout } from "../redux/actions";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { loadUser } from "../redux/actions";
 import { ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useWindowDimensions, Image } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import axios from "axios";
+import { auth_URL } from "../config/env";
+import { useState } from "react";
 const ProfileScreen = ({ navigation }) => {
+  const [userData, setUserData] = useState(null);
   const dispatch = useDispatch();
+
   const onLogout = () => {
     dispatch(logout());
     navigation.navigate("Home");
   };
 
-  //get width of device
+  const getUserDetails = async () => {
+    try {
+      const token = await AsyncStorage.getItem("@token");
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      };
+      const res = await axios.get(`${auth_URL.AUTH_URI}/users/me/`, config);
+      if (res.status === 200) {
+        setUserData(res.data);
+      }
+    } catch (e) {
+      console.log(e.response);
+      alert("Something went wrong!")
+      AsyncStorage.removeItem("@token");
+    }
+  }
   const { width } = useWindowDimensions();
+  
   useEffect(() => {
-    dispatch(loadUser());
-  });
+    getUserDetails();
+  }, [onLogout]);
+  
+
+
   return (
     <SafeAreaView>
       <ScrollView scrollEventThrottle={16}>
@@ -41,7 +68,7 @@ const ProfileScreen = ({ navigation }) => {
                 color: "#52b788",
               }}
             >
-              pythonicnerd{" "}
+              {userData.username}{" "}
             </Text>{" "}
           </Text>
           <View style={{
@@ -56,7 +83,7 @@ const ProfileScreen = ({ navigation }) => {
               fontWeight: "600",
 
             }}>
-              Name: Vishal Maurya
+              Name: {userData.first_name} {userData.last_name}
             </Text>
             <Text style={{
               color: "white",
@@ -65,7 +92,7 @@ const ProfileScreen = ({ navigation }) => {
               marginTop: 20,
 
             }}>
-              Email: vishalmaurya3112@gmail.com
+              Email: {userData.email}
             </Text>
 
 

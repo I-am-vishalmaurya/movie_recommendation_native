@@ -1,34 +1,34 @@
 import { View, Text, ScrollView } from "react-native";
 import MovieCard from "./MovieCard";
 import axios from "axios";
-import React, { useEffect, useState } from 'react'
-import AsyncStorage from '@react-native-async-storage/async-storage'
-import { api_URL } from '../../config/env'
+import React, { useEffect, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { api_URL } from "../../config/env";
 
 export default function TopMovies() {
-    const [topMovies, setTopMovies] = useState([])
-    const getTopMovies = async () => {
-        const token = await AsyncStorage.getItem('@token')
-        let config = {
-            method: 'get',
-            url: `${api_URL.API_URI}/movies/top/`,
-            headers: { 
-            'Authorization': token
-            }
-        };
-        
-        axios(config)
-        .then((response) => {
-            setTopMovies(response.data)
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-    }
+  const [topMovies, setTopMovies] = useState([]);
+  const getTopMovies = async () => {
+    const token = await AsyncStorage.getItem("@token");
+    let config = {
+      method: "get",
+      url: `${api_URL.API_URI}/movies/top/`,
+      headers: {
+        Authorization: token,
+      },
+    };
 
-    useEffect(() => {
-        getTopMovies()
-    }, [])
+    axios(config)
+      .then((response) => {
+        setTopMovies(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    getTopMovies();
+  }, []);
   return (
     <View
       style={{
@@ -82,5 +82,5 @@ export default function TopMovies() {
         </ScrollView>
       </View>
     </View>
-  )
+  );
 }

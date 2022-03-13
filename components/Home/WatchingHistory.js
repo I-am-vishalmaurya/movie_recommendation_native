@@ -1,16 +1,15 @@
 import { View, Text, ScrollView } from "react-native";
 import MovieCard from "./MovieCard";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { api_URL } from "../../config/env";
 
 export default function WatchingHistory() {
-  const dummyData = [];
-  const [data, setData] = React.useState([]);
+  const [movieData, setMovieData] = useState([]);
 
   const getWatchList = async () => {
-      const token = await AsyncStorage.getItem('@token');
+    const token = await AsyncStorage.getItem("@token");
     let config = {
       method: "get",
       url: `${api_URL.API_URI}/watchlist/`,
@@ -21,7 +20,7 @@ export default function WatchingHistory() {
 
     axios(config)
       .then((response) => {
-        setData(response.data)
+        setMovieData(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -29,8 +28,8 @@ export default function WatchingHistory() {
   };
 
   useEffect(() => {
-      getWatchList()
-  }, [])
+    getWatchList();
+  }, []);
   return (
     <View
       style={{
@@ -50,14 +49,14 @@ export default function WatchingHistory() {
             color: "#52b788",
           }}
         >
-          WATCHING{" "}
+          YOUR{" "}
         </Text>{" "}
         <Text
           style={{
             color: "white",
           }}
         >
-          HISTORY
+          WATCHLIST
         </Text>
       </Text>
       <View
@@ -66,22 +65,24 @@ export default function WatchingHistory() {
           marginTop: 20,
         }}
       >
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-          {data.map((movie) => (
-            <MovieCard
-              movie_id={movie.id}
-              poster_path={movie.poster_path}
-              key={movie.id}
-              original_title={movie.original_title}
-              overview={movie.overview}
-              genres={movie.genres}
-              popularity={movie.popularity}
-              year={movie.year}
-              status={movie.status}
-              runtime={movie.runtime}
-            />
-          ))}
-        </ScrollView>
+        {movieData && movieData.length > 0 ? (
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+            {movieData.map((item) => (
+              <MovieCard
+                movie_id={item.movie.id}
+                poster_path={item.movie.poster_path}
+                key={item.movie.id}
+                original_title={item.movie.original_title}
+                overview={item.movie.overview}
+                genres={item.movie.genres}
+                popularity={item.movie.popularity}
+                year={item.movie.year}
+                status={item.movie.status}
+                runtime={item.movie.runtime}
+              />
+            ))}
+          </ScrollView>
+        ) : null}
       </View>
     </View>
   );
