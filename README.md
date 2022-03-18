@@ -91,6 +91,7 @@ $ yarn start
 ## :city_sunrise: Screenshots ##
 The following screenshots are taken from the Expo app.
 1. Movie Recommender Home Page
+<img alt="Home Page" src="https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/home.png?raw=true" height="400" width="200">
 ![Home Page](https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/home.png?raw=true)
 2. Movie Recommender Watchlist
 ![User Watchlist](https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/home2.png?raw=true)
@@ -110,7 +111,7 @@ The following screenshots are taken from the Expo app.
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/{{I-am-vishalmaurya}}" target="_blank">{{Vishal Maurya}}</a>
+Made with :heart: by <a href="https://github.com/{{I-am-vishalmaurya}}" target="_blank">Vishal Maurya</a>
 
 &#xa0;
 
