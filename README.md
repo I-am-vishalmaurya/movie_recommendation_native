@@ -92,17 +92,16 @@ $ yarn start
 The following screenshots are taken from the Expo app.
 1. Movie Recommender Home Page
 <img alt="Home Page" src="https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/home.png?raw=true" height="400" width="200">
-![Home Page](https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/home.png?raw=true)
 2. Movie Recommender Watchlist
-![User Watchlist](https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/home2.png?raw=true)
+<img alt="Watchlist" src="https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/home2.png?raw=true" height="400" width="200">
 3. Movie details
-![Movie Details](https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/movie_detail.png?raw=true)
+<img alt = "Movie Details" src="https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/movie_detail.png?raw=true" height="400" width="200"/>
 4. Movie Ratings
-![Movie Ratings](https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/movie_rating.png?raw=true)
+<img alt="Movie Ratings" src="https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/movie_rating.png?raw=true" height="400" width="200"/>
 5. Movie Search
-![Movie Search](https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/search.png?raw=true)
+<img alt="Movie Search" src="https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/search.png?raw=true" height="400" width="200" />
 6. User Profile
-![User Profile](https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/user_profile.png?raw=true)
+<img alt="User profile" src="https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/user_profile.png?raw=true" height="400" width="200" />
 
 
 
