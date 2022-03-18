@@ -9,25 +9,25 @@
 <h1 align="center">Expo Movie Reco</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/expo-movie-reco?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{I-am-vishalmaurya}}/expo-movie-reco?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/expo-movie-reco?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{I-am-vishalmaurya}}/expo-movie-reco?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/expo-movie-reco?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{I-am-vishalmaurya}}/expo-movie-reco?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/expo-movie-reco?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/{{I-am-vishalmaurya}}/expo-movie-reco?color=56BEB8">
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/expo-movie-reco?color=56BEB8" /> -->
+  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{I-am-vishalmaurya}}/expo-movie-reco?color=56BEB8" /> -->
 
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/{{YOUR_GITHUB_USERNAME}}/expo-movie-reco?color=56BEB8" /> -->
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/{{I-am-vishalmaurya}}/expo-movie-reco?color=56BEB8" /> -->
 
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/{{YOUR_GITHUB_USERNAME}}/expo-movie-reco?color=56BEB8" /> -->
+  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/{{I-am-vishalmaurya}}/expo-movie-reco?color=56BEB8" /> -->
 </p>
 
 <!-- Status -->
 
 <!-- <h4 align="center"> 
-	🚧  Expo Movie Reco 🚀 Under construction...  🚧
+	🚧  Expo Movie Recommender 🚀 Under construction...  🚧
 </h4> 
 
 <hr> -->
@@ -39,7 +39,7 @@
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
+  <a href="https://github.com/{{I-am-vishalmaurya}}" target="_blank">Author</a>
 </p>
 
 <br>
@@ -50,9 +50,9 @@ Describe your project
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: Personal Watchlist;\
+:heavy_check_mark: Powerful Recommendation for movies;\
+:heavy_check_mark: Clean UI;
 
 ## :rocket: Technologies ##
 
@@ -72,7 +72,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/expo-movie-reco
+$ git clone https://github.com/{{I-am-vishalmaurya}}/expo-movie-reco
 
 # Access
 $ cd expo-movie-reco
@@ -91,7 +91,7 @@ $ yarn start
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+Made with :heart: by <a href="https://github.com/{{I-am-vishalmaurya}}" target="_blank">{{Vishal Maurya}}</a>
 
 &#xa0;
 
