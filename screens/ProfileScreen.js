@@ -10,7 +10,7 @@ import axios from "axios";
 import { auth_URL } from "../config/env";
 import { useState } from "react";
 const ProfileScreen = ({ navigation }) => {
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState('');
   const dispatch = useDispatch();
 
   const onLogout = () => {
@@ -41,7 +41,7 @@ const ProfileScreen = ({ navigation }) => {
   
   useEffect(() => {
     getUserDetails();
-  }, [onLogout]);
+  }, []);
   
 
 

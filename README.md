@@ -1,10 +1,10 @@
-<div align="center" id="top"> 
+<!-- <div align="center" id="top"> 
   <img src="./.github/app.gif" alt="Expo Movie Recommender" />
 
   &#xa0;
 
   <!-- <a href="https://expomoviereco.netlify.app">Demo</a> -->
-</div>
+</div> -->
 
 <h1 align="center">Expo Movie Recommender</h1>
 
@@ -46,7 +46,9 @@
 
 ## :dart: About ##
 
-Describe your project
+Movie Recommender Application which uses [!https://github.com/I-am-vishalmaurya/django_movie_recommender] as backend.
+The main motive behind making this application was to learn more about overall software development process, and also to learn little bit of react native. 
+
 
 ## :sparkles: Features ##
 
@@ -85,6 +87,23 @@ $ yarn start
 
 # The server will initialize in the <http://localhost:3000>
 ```
+
+## :city_sunrise: Screenshots ##
+The following screenshots are taken from the Expo app.
+1. Movie Recommender Home Page
+![Home Page](https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/home.png?raw=true)
+2. Movie Recommender Watchlist
+![User Watchlist](https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/home2.png?raw=true)
+3. Movie details
+![Movie Details](https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/movie_detail.png?raw=true)
+4. Movie Ratings
+![Movie Ratings](https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/movie_rating.png?raw=true)
+5. Movie Search
+![Movie Search](https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/search.png?raw=true)
+6. User Profile
+![User Profile](https://github.com/I-am-vishalmaurya/movie_recommendation_native/blob/master/assets/user_profile.png?raw=true)
+
+
 
 ## :memo: License ##
 
