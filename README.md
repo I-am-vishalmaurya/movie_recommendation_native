@@ -4,7 +4,7 @@
   &#xa0;
 
   <!-- <a href="https://expomoviereco.netlify.app">Demo</a> -->
-</div> -->
+<!-- </div> -->
 
 <h1 align="center">Expo Movie Recommender</h1>
 
@@ -46,7 +46,7 @@
 
 ## :dart: About ##
 
-Movie Recommender Application which uses [!https://github.com/I-am-vishalmaurya/django_movie_recommender] as backend.
+Movie Recommender Application which uses Django as <a href="https://github.com/I-am-vishalmaurya/django_movie_recommender">backend.</a>
 The main motive behind making this application was to learn more about overall software development process, and also to learn little bit of react native. 
 
 
