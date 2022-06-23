@@ -353,7 +353,7 @@ export const rateMovie = (id, rating, review) => {
         config
       );
       if (res.status === 200) {
-        console.log("Success")
+        Alert.alert("Rate Movie","Thank You For your rating 🥰")
         dispatch(setRateMovieSuccess(res.data));
       }
     } catch (e) {

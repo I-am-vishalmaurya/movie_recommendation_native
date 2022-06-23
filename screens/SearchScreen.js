@@ -360,8 +360,6 @@ const SearchScreen = () => {
   const handleSearch = async (search) => {
     setLoading(true);
     const token = await AsyncStorage.getItem("@token");
-    console.log(token);
-    // wait to stop typing
     setTimeout(() => {
       onSearch(search, token);
     }, 1000);

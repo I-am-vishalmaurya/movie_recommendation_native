@@ -139,6 +139,7 @@ export const userMovies = (state = usermovie, action) => {
         error: action.payload,
       };
     case RATE_MOVIE_SUCCESS:
+      
       return {
         ...state,
         rateMovie: action.payload,

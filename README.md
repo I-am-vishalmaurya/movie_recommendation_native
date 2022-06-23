@@ -110,7 +110,7 @@ The following screenshots are taken from the Expo app.
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/{{I-am-vishalmaurya}}" target="_blank">Vishal Maurya</a>
+Made with :heart: by <a href="https://github.com/I-am-vishalmaurya" target="_blank">Vishal Maurya</a>
 
 &#xa0;
 
